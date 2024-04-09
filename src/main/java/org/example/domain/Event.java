@@ -1,5 +1,7 @@
 package org.example.domain;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -8,9 +10,10 @@ import java.time.ZonedDateTime;
 import java.util.List;
 
 
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Event {
+    @EqualsAndHashCode.Include
     private String sport_event_id;
     private ZonedDateTime start_date;
     private String sport_name;
@@ -22,4 +25,6 @@ public class Event {
     private BigDecimal probability_draw;
     private BigDecimal probability_away_team_winner;
     private List<Competitor> competitors;
+
+
 }

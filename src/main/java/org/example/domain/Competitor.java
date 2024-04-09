@@ -1,5 +1,8 @@
 package org.example.domain;
 
+import lombok.Data;
+
+@Data
 public class Competitor {
     private String id;
     private String name;
