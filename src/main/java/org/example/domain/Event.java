@@ -2,8 +2,6 @@ package org.example.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
@@ -25,6 +23,8 @@ public class Event {
     private BigDecimal probability_draw;
     private BigDecimal probability_away_team_winner;
     private List<Competitor> competitors;
+
+
 
 
 }

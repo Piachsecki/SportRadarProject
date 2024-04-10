@@ -31,14 +31,11 @@ public class MatchFinder {
             this.events = gson.fromJson(new FileReader(filePath), new TypeToken<List<Event>>() {
             }.getType());
 
-//            events.forEach(e -> e.get);
-
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
 
     }
-
 
     public List<Event> highestProbableValues(List<Event> events, int numberOfExpectedMatches) {
         checkIfNumberOfExpectedMatchesIsCorrect(events.size(), numberOfExpectedMatches);
@@ -52,43 +49,24 @@ public class MatchFinder {
                                         event -> findMax(event.getProbability_draw(),
                                                 event.getProbability_home_team_winner(),
                                                 event.getProbability_away_team_winner())));
-
-//        System.out.println(highestProbabilityForId);
-//
-//        int i = 0;
-//        for (String sportEventId : highestProbabilityForId.keySet()) {
-//            if (i >= numberOfExpectedMatches) {
-//                break;
-//            }
-//            result.add(this.events.stream().filter(event -> sportEventId.equals(event.getSport_event_id())).findFirst().get());
-//            i++;
-//        }
-//
         for (int i = 0; i < numberOfExpectedMatches; i++) {
-            if (i >= numberOfExpectedMatches) {
-                break;
-            }
-            String eventId = findExactEventId(highestProbabilityForId, events);
-            result.add(this.events.stream().filter(event -> eventId.equals(event.getSport_event_id())).findFirst().get());
+            String eventId = findExactEventId(highestProbabilityForId);
+            result.add(this.events.stream().filter(event -> eventId.equals(event.getSport_event_id())).findFirst().orElseThrow());
         }
-
-
-        System.out.println(result);
 
         return result;
     }
 
-    private String findExactEventId(Map<String, BigDecimal> highestProbabilityForId, List<Event> events) {
+    private String findExactEventId(Map<String, BigDecimal> highestProbabilityForId) {
         BigDecimal max = BigDecimal.ZERO;
         String keyToReturn = null;
         for (Map.Entry<String, BigDecimal> entry : highestProbabilityForId.entrySet()) {
             if(max.compareTo(entry.getValue()) < 0){
                 max = entry.getValue();
                 keyToReturn = entry.getKey();
-//                System.out.println(keyToReturn);
             }
         }
-//        highestProbabilityForId.remove(keyToReturn, max);
+        highestProbabilityForId.remove(keyToReturn, max);
         return keyToReturn;
 
     }
@@ -105,7 +83,7 @@ public class MatchFinder {
     }
 
 
-    public BigDecimal findMax(BigDecimal... values) {
+    private BigDecimal findMax(BigDecimal... values) {
         return Arrays.stream(values)
                 .max(BigDecimal::compareTo)
                 .orElse(BigDecimal.ZERO);

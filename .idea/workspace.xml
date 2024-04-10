@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33867309-3b54-40f0-8c48-eaa8ae902038" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/TooManyExpectedMatchesException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/util/PrintingUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MatchFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MatchFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Competitor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Competitor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Venue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Venue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/util/PrintingUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/util/PrintingUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +46,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.exception" />
@@ -94,7 +92,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712661067015</updated>
-      <workItem from="1712661068943" duration="7992000" />
+      <workItem from="1712661068943" duration="8960000" />
+      <workItem from="1712730875325" duration="2229000" />
+      <workItem from="1712733352718" duration="1949000" />
     </task>
     <task id="LOCAL-00001" summary="[feature-branch] Basic constructor to open the config.json configuration file and map its objects into our domain.">
       <created>1712667812551</created>
@@ -103,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712667812551</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="[feature-branch] Filtering data by the highest value implemented successfully.">
+      <created>1712672407701</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712672407701</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,14 +129,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[feature-branch] Basic constructor to open the config.json configuration file and map its objects into our domain." />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature-branch] Basic constructor to open the config.json configuration file and map its objects into our domain." />
+    <MESSAGE value="[feature-branch] Filtering data by the highest value implemented successfully." />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature-branch] Filtering data by the highest value implemented successfully." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/MatchFinder.java</url>
-          <line>66</line>
+          <line>52</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
