@@ -37,6 +37,7 @@ public class MatchFinder {
         Gson gson = new GsonBuilder().registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeDeserializer()).create();
 
         try {
+
             this.events = gson.fromJson(new FileReader(filePath), new TypeToken<List<Event>>() {
             }.getType());
             events.forEach(event -> {
