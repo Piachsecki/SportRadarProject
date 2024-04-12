@@ -7,7 +7,6 @@ import lombok.Getter;
 import org.example.domain.Event;
 import org.example.exception.TooManyExpectedMatchesException;
 import org.example.json.ZonedDateTimeDeserializer;
-import org.example.service.CompetitorService;
 import org.example.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

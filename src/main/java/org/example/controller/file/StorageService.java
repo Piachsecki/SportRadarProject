@@ -1,6 +1,5 @@
 package org.example.controller.file;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,10 +12,6 @@ import java.util.UUID;
 
 @Service
 public class StorageService {
-
-    @Value("${upload.dir}")
-    private String uploadDir;
-
     public String store(MultipartFile file) throws IOException {
         // Generate unique filename
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());

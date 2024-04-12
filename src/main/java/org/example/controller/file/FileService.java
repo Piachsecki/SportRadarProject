@@ -8,6 +8,7 @@ import org.example.domain.Event;
 import org.example.json.ZonedDateTimeDeserializer;
 import org.example.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,22 +39,14 @@ public class FileService {
             Gson gson = new GsonBuilder().registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeDeserializer()).create();
             List<Event> events = new ArrayList<>();
             try {
-
                 events = gson.fromJson(new FileReader(filePath), new TypeToken<List<Event>>() {
                 }.getType());
-                events.forEach(event -> {
-                    try {
-                        eventService.addEvent(event);
-                    } catch (Exception e) {
-                        // Log or handle the exception
-                        e.printStackTrace();
-                    }
-                });
+                events.forEach(eventService::addEvent);
 
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            return null;
+            return new FileUploadResponse(file.getName(), HttpStatus.OK);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

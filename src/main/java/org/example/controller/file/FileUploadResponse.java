@@ -1,4 +1,9 @@
 package org.example.controller.file;
 
-public class FileUploadResponse {
+import org.springframework.http.HttpStatus;
+
+public record FileUploadResponse(
+        String fileName,
+        HttpStatus httpStatus
+) {
 }
