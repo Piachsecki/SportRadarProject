@@ -1,10 +1,9 @@
 package org.example.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -25,4 +24,7 @@ public class Venue {
     private String map_coordinates;
     @Column(name = "country_code")
     private String country_code;
+
+    @OneToMany(mappedBy = "venue", cascade = CascadeType.ALL)
+    private List<Event> events;
 }

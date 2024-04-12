@@ -3,6 +3,8 @@ package org.example.domain;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 @Table
 @Entity
@@ -31,7 +33,10 @@ public class Competitor {
     private String gender;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sport_event_id")
-    private Event event;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "sport_event_id")
+//    private Event event;
+
+    @ManyToMany(mappedBy = "competitors")
+    private List<Event> events;
 }

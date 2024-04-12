@@ -37,8 +37,8 @@ public class Event {
     @Column(name = "season_name")
     private String season_name;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id", unique = true)
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Venue venue;
 
     @Column(name = "probability_home_team_winner")
@@ -50,8 +50,18 @@ public class Event {
     @Column(name = "probability_away_team_winner")
     private BigDecimal probability_away_team_winner;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event", cascade = CascadeType.REMOVE)
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "event", cascade = CascadeType.REMOVE)
+//    private List<Competitor> competitors;
+
+    @ManyToMany
+    @JoinTable(
+            name = "event_competitor",
+            joinColumns = @JoinColumn(name = "event_id"),
+            inverseJoinColumns = @JoinColumn(name = "competitor_id")
+    )
     private List<Competitor> competitors;
+
+
 
 
 }
