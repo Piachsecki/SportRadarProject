@@ -4,6 +4,8 @@ import org.example.domain.Venue;
 import org.example.repository.VenueRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class VenueService {
     private final VenueRepository venueRepository;

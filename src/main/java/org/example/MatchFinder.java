@@ -3,6 +3,7 @@ package org.example;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.example.domain.Event;
 import org.example.exception.TooManyExpectedMatchesException;
@@ -26,13 +27,17 @@ import java.util.stream.Collectors;
 public class MatchFinder {
     private List<Event> events;
     private EventService eventService;
-//    private CompetitorService competitorService;
 
     @Autowired
     public MatchFinder(EventService eventService) {
         this.eventService = eventService;
         this.events = new ArrayList<>();
-        String filePath = "./src/main/resources/static/config.json";
+    }
+
+
+//    @PostConstruct
+    public void init(String filePath){
+        //        String filePath = "./src/main/resources/static/config.json";
         Gson gson = new GsonBuilder().registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeDeserializer()).create();
 
         try {
@@ -51,9 +56,7 @@ public class MatchFinder {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 
     public List<Event> highestProbableValues(List<Event> events, int numberOfExpectedMatches) {
         checkIfNumberOfExpectedMatchesIsCorrect(events.size(), numberOfExpectedMatches);

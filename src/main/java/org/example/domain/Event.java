@@ -18,7 +18,7 @@ public class Event {
 
     @EqualsAndHashCode.Include
     @Id
-    @Column(name = "sport_event_id")
+    @Column(name = "sport_event_id", nullable = true)
     private String sport_event_id;
 
 
@@ -57,7 +57,7 @@ public class Event {
     @JoinTable(
             name = "event_competitor",
             joinColumns = @JoinColumn(name = "event_id"),
-            inverseJoinColumns = @JoinColumn(name = "competitor_id")
+            inverseJoinColumns = @JoinColumn(name = "competitor_id", nullable = true)
     )
     private List<Competitor> competitors;
 

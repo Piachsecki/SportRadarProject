@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33867309-3b54-40f0-8c48-eaa8ae902038" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/ResultController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MatchFinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MatchFinder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/file/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/file/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/file/FileUploadResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/file/FileUploadResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/file/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/file/StorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/EventRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/EventRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/VenueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/VenueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/config.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +140,11 @@
       <workItem from="1712822053964" duration="1858000" />
       <workItem from="1712824669578" duration="199000" />
       <workItem from="1712840507676" duration="7389000" />
-      <workItem from="1712906285288" duration="7043000" />
+      <workItem from="1712906285288" duration="7926000" />
+      <workItem from="1712999342505" duration="1124000" />
+      <workItem from="1713041695558" duration="328000" />
+      <workItem from="1713108799407" duration="112000" />
+      <workItem from="1713544729106" duration="6738000" />
     </task>
     <task id="LOCAL-00001" summary="[feature-branch] Basic constructor to open the config.json configuration file and map its objects into our domain.">
       <created>1712667812551</created>
@@ -176,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712912377404</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="[feature-branch] Implemented logic for controller to an end.">
+      <created>1712918008197</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712918008197</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,6 +211,7 @@
     <MESSAGE value="[feature-branch] Changed project into SpringBoot application working successfully + implemented flyway and SQL scripts for the creation of our database" />
     <MESSAGE value="[feature-branch] Adding to database events, competitors and venues implemented successfully.&#10;Created 1 relation OneToMany(Event &amp;&amp; Venue)&#10;Created 1 relation ManyToMany (Event &amp;&amp; Competitor)" />
     <MESSAGE value="[feature-branch] Successfully written controller that takes a file as an input, creates this file in our program architecture and then this file is mapped into correct entities which are sent to the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="[feature-branch] Successfully written controller that takes a file as an input, creates this file in our program architecture and then this file is mapped into correct entities which are sent to the database." />
+    <MESSAGE value="[feature-branch] Implemented logic for controller to an end." />
+    <option name="LAST_COMMIT_MESSAGE" value="[feature-branch] Implemented logic for controller to an end." />
   </component>
 </project>
