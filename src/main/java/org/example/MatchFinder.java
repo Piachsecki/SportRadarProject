@@ -3,10 +3,14 @@ package org.example;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 import org.example.domain.Event;
 import org.example.exception.TooManyExpectedMatchesException;
 import org.example.json.ZonedDateTimeDeserializer;
+import org.example.service.EventService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -19,22 +23,39 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Getter
+@Component
 public class MatchFinder {
     private List<Event> events;
+    private EventService eventService;
 
-
-    public MatchFinder(String filePath) {
-        Gson gson = new GsonBuilder().registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeDeserializer()).create();
+    @Autowired
+    public MatchFinder(EventService eventService) {
+        this.eventService = eventService;
         this.events = new ArrayList<>();
+    }
+
+
+//    @PostConstruct
+    public void init(String filePath){
+        //        String filePath = "./src/main/resources/static/config.json";
+        Gson gson = new GsonBuilder().registerTypeAdapter(ZonedDateTime.class, new ZonedDateTimeDeserializer()).create();
 
         try {
+
             this.events = gson.fromJson(new FileReader(filePath), new TypeToken<List<Event>>() {
             }.getType());
+            events.forEach(event -> {
+                try {
+                    eventService.addEvent(event);
+                } catch (Exception e) {
+                    // Log or handle the exception
+                    e.printStackTrace();
+                }
+            });
 
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public List<Event> highestProbableValues(List<Event> events, int numberOfExpectedMatches) {
@@ -54,6 +75,7 @@ public class MatchFinder {
             result.add(this.events.stream().filter(event -> eventId.equals(event.getSport_event_id())).findFirst().orElseThrow());
         }
 
+
         return result;
     }
 
@@ -61,7 +83,7 @@ public class MatchFinder {
         BigDecimal max = BigDecimal.ZERO;
         String keyToReturn = null;
         for (Map.Entry<String, BigDecimal> entry : highestProbabilityForId.entrySet()) {
-            if(max.compareTo(entry.getValue()) < 0){
+            if (max.compareTo(entry.getValue()) < 0) {
                 max = entry.getValue();
                 keyToReturn = entry.getKey();
             }
