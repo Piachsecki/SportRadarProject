@@ -1,0 +1,235 @@
+{
+  "generated_at": "2024-04-20T10:25:4200:00",
+  "sport_event_probabilities": [
+    {
+      "sport_event": {
+        "id": "sr:sport_event:34151685",
+        "start_time": "2022-08-05T19:00:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:1",
+            "name": "England",
+            "country_code": "ENG"
+          },
+          "competition": {
+            "id": "sr:competition:17",
+            "name": "Premier League",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:93741",
+            "name": "Premier League 22\/23",
+            "start_date": "2022-08-05",
+            "end_date": "2023-05-28",
+            "year": "22\/23",
+            "competition_id": "sr:competition:17"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2022-08-05",
+            "end_date": "2023-05-28",
+            "year": "22\/23"
+          },
+          "round": {
+            "number": 1
+          },
+          "groups": [
+            {
+              "id": "sr:league:65927",
+              "name": "Premier League 22\/23"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": true,
+            "venue": true,
+            "extended_player_stats": true,
+            "extended_team_stats": true,
+            "basic_play_by_play": true,
+            "basic_player_stats": true,
+            "basic_team_stats": true
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:7",
+            "name": "Crystal Palace",
+            "country": "England",
+            "country_code": "ENG",
+            "abbreviation": "CRY",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:42",
+            "name": "Arsenal FC",
+            "country": "England",
+            "country_code": "ENG",
+            "abbreviation": "ARS",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "venue": {
+          "id": "sr:venue:10",
+          "name": "Selhurst Park",
+          "capacity": 25073,
+          "city_name": "London",
+          "country_name": "England",
+          "map_coordinates": "51.398333,-0.085556",
+          "country_code": "ENG",
+          "timezone": "Europe\/London"
+        },
+        "sport_event_conditions": {
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "markets": [
+        {
+          "name": "3way",
+          "outcomes": [
+            {
+              "name": "home_team_winner",
+              "probability": 21.3
+            },
+            {
+              "name": "away_team_winner",
+              "probability": 52.2
+            },
+            {
+              "name": "draw",
+              "probability": 26.4
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "sport_event": {
+        "id": "sr:sport_event:34151687",
+        "start_time": "2022-08-06T11:30:00+00:00",
+        "start_time_confirmed": true,
+        "sport_event_context": {
+          "sport": {
+            "id": "sr:sport:1",
+            "name": "Soccer"
+          },
+          "category": {
+            "id": "sr:category:1",
+            "name": "England",
+            "country_code": "ENG"
+          },
+          "competition": {
+            "id": "sr:competition:17",
+            "name": "Premier League",
+            "gender": "men"
+          },
+          "season": {
+            "id": "sr:season:93741",
+            "name": "Premier League 22\/23",
+            "start_date": "2022-08-05",
+            "end_date": "2023-05-28",
+            "year": "22\/23",
+            "competition_id": "sr:competition:17"
+          },
+          "stage": {
+            "order": 1,
+            "type": "league",
+            "phase": "regular season",
+            "start_date": "2022-08-05",
+            "end_date": "2023-05-28",
+            "year": "22\/23"
+          },
+          "round": {
+            "number": 1
+          },
+          "groups": [
+            {
+              "id": "sr:league:65927",
+              "name": "Premier League 22\/23"
+            }
+          ]
+        },
+        "coverage": {
+          "type": "sport_event",
+          "sport_event_properties": {
+            "lineups": true,
+            "venue": true,
+            "extended_player_stats": true,
+            "extended_team_stats": true,
+            "basic_play_by_play": true,
+            "basic_player_stats": true,
+            "basic_team_stats": true
+          }
+        },
+        "competitors": [
+          {
+            "id": "sr:competitor:43",
+            "name": "Fulham FC",
+            "country": "England",
+            "country_code": "ENG",
+            "abbreviation": "FUL",
+            "qualifier": "home",
+            "gender": "male"
+          },
+          {
+            "id": "sr:competitor:44",
+            "name": "Liverpool FC",
+            "country": "England",
+            "country_code": "ENG",
+            "abbreviation": "LIV",
+            "qualifier": "away",
+            "gender": "male"
+          }
+        ],
+        "venue": {
+          "id": "sr:venue:611",
+          "name": "Craven Cottage",
+          "capacity": 25700,
+          "city_name": "London",
+          "country_name": "England",
+          "map_coordinates": "51.474937,-0.221958",
+          "country_code": "ENG",
+          "timezone": "Europe\/London"
+        },
+        "sport_event_conditions": {
+          "ground": {
+            "neutral": false
+          }
+        }
+      },
+      "markets": [
+        {
+          "name": "3way",
+          "outcomes": [
+            {
+              "name": "home_team_winner",
+              "probability": 9.6
+            },
+            {
+              "name": "away_team_winner",
+              "probability": 74.9
+            },
+            {
+              "name": "draw",
+              "probability": 15.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

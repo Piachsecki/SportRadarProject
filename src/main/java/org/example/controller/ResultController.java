@@ -5,8 +5,6 @@ import org.example.MatchFinder;
 import org.example.domain.Event;
 import org.example.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,16 +28,32 @@ public class ResultController {
 
 
     @GetMapping(value = "/get/{fileName}/{numberOfResults}")
-    public ResponseEntity<List<Event>> getResults(
+    public ResponseEntity<List<Event>> getResultsFromFile(
             @PathVariable("fileName") String fileName,
             @PathVariable("numberOfResults") Integer numberOfResults) {
 
         matchFinder.init(String.valueOf("src/main/resources/static/" + fileName));
 
         List<Event> result = eventService.getEventsWithTheBiggestProbability(numberOfResults);
-
+        result.forEach(System.out::println);
         return ResponseEntity.ok(result);
     }
+
+    @GetMapping(value = "/get/{idOfTheEvent}/{numberOfResults}")
+    public ResponseEntity<List<Event>> getResultsFromExternalId(
+            @PathVariable("idOfTheEvent") Integer idOfTheEvent,
+            @PathVariable("numberOfResults") Integer numberOfResults)
+    {
+
+
+
+        List<Event> result = eventService.getEventsWithTheBiggestProbability(numberOfResults);
+        result.forEach(System.out::println);
+        return ResponseEntity.ok(result);
+    }
+
+
+
 
 
 }

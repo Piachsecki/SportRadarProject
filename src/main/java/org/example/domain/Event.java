@@ -1,16 +1,16 @@
 package org.example.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 import java.util.List;
 
 
-
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table
 @Entity
@@ -18,7 +18,7 @@ public class Event {
 
     @EqualsAndHashCode.Include
     @Id
-    @Column(name = "sport_event_id", nullable = true)
+    @Column(name = "sport_event_id")
     private String sport_event_id;
 
 
@@ -60,7 +60,6 @@ public class Event {
             inverseJoinColumns = @JoinColumn(name = "competitor_id", nullable = true)
     )
     private List<Competitor> competitors;
-
 
 
 
